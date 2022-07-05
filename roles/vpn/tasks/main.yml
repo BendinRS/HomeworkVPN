@@ -28,7 +28,7 @@
 
   - name: Copy static.key to client
     copy:
-       src: roles/vpn/files/etc/openvpn/static.key
+       src: roles/vpn/files/server/etc/openvpn/static.key
        dest: /etc/openvpn/static.key
     when: (ansible_hostname == "client")
 
