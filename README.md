@@ -24,9 +24,11 @@
 Замеры:  
 
 + tun  
-![Альтернативный текст](https://i.ibb.co/9pK0Q0X/tun.png)
+
+![tun](https://i.ibb.co/9pK0Q0X/tun.png)
 
 + tap  
-![Альтернативный текст](https://i.ibb.co/hYTQQnq/tap.png)
+
+![tap](https://i.ibb.co/hYTQQnq/tap.png)
 
 
