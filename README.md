@@ -25,7 +25,7 @@
 
 + tun  
 
-![tun](https://i.ibb.co/9pK0Q0X/tun.png)
+ ![tun](https://i.ibb.co/9pK0Q0X/tun.png)
 
 + tap  
 
