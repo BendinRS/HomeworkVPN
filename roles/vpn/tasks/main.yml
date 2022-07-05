@@ -26,9 +26,9 @@
       dest: ./roles/vpn/files/
     when: (ansible_hostname == "server")
 
-  - name: Copy server.conf to hosts
+  - name: Copy static.key to client
     copy:
-       src: ./files/etc/openvpn/static.key
+       src: roles/vpn/files/etc/openvpn/static.key
        dest: /etc/openvpn/static.key
     when: (ansible_hostname == "client")
 
