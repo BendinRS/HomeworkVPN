@@ -28,7 +28,7 @@
 
   - name: Copy server.conf to hosts
     copy:
-       src: ./files/static.key
+       src: ./files/etc/openvpn/static.key
        dest: /etc/openvpn/static.key
     when: (ansible_hostname == "client")
 
