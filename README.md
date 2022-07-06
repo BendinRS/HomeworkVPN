@@ -110,7 +110,7 @@ verb 3
 </key>
 ```
 + Два варианта подключения к серверу:  
-out1'''
+```
 openvpn --config client.conf  
 or  
 systemctl start openvpn@client  
