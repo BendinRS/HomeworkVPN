@@ -35,10 +35,12 @@
 
 + Оставляем только 1 ВМ. Разворачиваем 
 + Устанавливаем epel репозиторий  
-```yum install -y epel-release
 ```
-+ Устанавливаем пакет openvpn, easy-rsa и iperf3
-```yum install -y openvpn easy-rsa
+yum install -y epel-release
+```
++ Устанавливаем пакет openvpn, easy-rsa
+```
+yum install -y openvpn easy-rsa
 ```
 + Переходим в директорию /etc/openvpn/ и инициализируем pki  
 ```
@@ -108,8 +110,8 @@ verb 3
 </key>
 ```
 + Два варианта подключения к серверу:  
-'''
-openvpn --config client.conf
-or
-systemctl start openvpn@client
+out1'''
+openvpn --config client.conf  
+or  
+systemctl start openvpn@client  
 ```
