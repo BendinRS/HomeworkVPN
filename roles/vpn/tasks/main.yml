@@ -1,2 +1,50 @@
 ---
 # tasks file for vpn
+
+  - name: install epel-release
+    yum:
+      state: present
+      name:
+        - epel-release
+
+  - name: install base tools
+    yum:
+      state: present
+      name:
+        - openvpn
+        - iperf3
+        - tcpdump
+        - policycoreutils-python
+
+  - name: Create static.key
+    shell: openvpn --genkey --secret /etc/openvpn/static.key
+    when: (ansible_hostname == "server")
+
+  - name: Extract file static.key
+    fetch:
+      src: /etc/openvpn/static.key
+      dest: ./roles/vpn/files/
+    when: (ansible_hostname == "server")
+
+  - name: Copy static.key to client
+    copy:
+       src: roles/vpn/files/server/etc/openvpn/static.key
+       dest: /etc/openvpn/static.key
+    when: (ansible_hostname == "client")
+
+  - name: Copy server.conf to hosts
+    template:
+       src: roles/vpn/files/server.conf.j2
+       dest: /etc/openvpn/server.conf
+      #  owner: frr
+      #  group: frr
+      #  mode: 0640
+
+  - name: start openvpn@server
+    service:
+      name: openvpn@server
+      state: started
+      enabled: true
+
+
+
